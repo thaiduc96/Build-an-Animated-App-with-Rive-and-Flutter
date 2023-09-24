@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:rive_animation/components/side_menu.dart';
+import 'package:rive_animation/entry_point.dart';
+import 'package:rive_animation/screens/home/home_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -27,7 +28,7 @@ class MyApp extends StatelessWidget {
           errorBorder: defaultInputBorder,
         ),
       ),
-      home: const SideMenu(),
+      home: const EntryPoint(),
     );
   }
 }

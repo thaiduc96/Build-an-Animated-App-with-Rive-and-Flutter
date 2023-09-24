@@ -18,7 +18,7 @@ class SignInForm extends StatefulWidget {
 // See you on next episode
 
 class _SignInFormState extends State<SignInForm> {
-  GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
   bool isShowLoading = false;
   bool isShowConfetti = false;
@@ -35,13 +35,13 @@ class _SignInFormState extends State<SignInForm> {
       isShowConfetti = true;
     });
     Future.delayed(
-      Duration(seconds: 1),
+      const Duration(seconds: 1),
       () {
         if (_formKey.currentState!.validate()) {
           // If everything looks good it shows the success animation
           check.fire();
           Future.delayed(
-            Duration(seconds: 2),
+            const Duration(seconds: 2),
             () {
               setState(() {
                 isShowLoading = false;
@@ -52,12 +52,12 @@ class _SignInFormState extends State<SignInForm> {
               confetti.fire();
               // Once all success we will navigate to the Next screen
               Future.delayed(
-                Duration(seconds: 1),
+                const Duration(seconds: 1),
                 () {
                   Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => EntryPoint(),
+                        builder: (context) => const EntryPoint(),
                       ));
                 },
               );
@@ -197,7 +197,7 @@ class _SignInFormState extends State<SignInForm> {
                   ),
                 ),
               )
-            : SizedBox(),
+            : const SizedBox(),
       ],
     );
   }
@@ -215,13 +215,13 @@ class CustomPositioned extends StatelessWidget {
       // Let's make it small
       child: Column(
         children: [
-          Spacer(),
+          const Spacer(),
           SizedBox(
             height: size,
             width: size,
             child: child,
           ),
-          Spacer(flex: 2),
+          const Spacer(flex: 2),
         ],
       ),
     );
